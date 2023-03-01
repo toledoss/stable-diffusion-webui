@@ -154,14 +154,14 @@
     "tac_activeIn.modelList": "",
     "tac_activeIn.modelListMode": "Blacklist",
     "tac_maxResults": 5.0,
-    "tac_showAllResults": false,
+    "tac_showAllResults": true,
     "tac_resultStepLength": 100.0,
     "tac_delayTime": 100.0,
     "tac_useWildcards": true,
     "tac_useEmbeddings": true,
     "tac_useHypernetworks": true,
     "tac_useLoras": true,
-    "tac_showWikiLinks": false,
+    "tac_showWikiLinks": true,
     "tac_replaceUnderscores": true,
     "tac_escapeParentheses": true,
     "tac_appendComma": true,
@@ -171,5 +171,6 @@
     "tac_translation.oldFormat": false,
     "tac_translation.searchByTranslation": true,
     "tac_extra.extraFile": "extra-quality-tags.csv",
-    "tac_extra.addMode": "Insert before"
+    "tac_extra.addMode": "Insert before",
+    "tac_slidingPopup": true
 }
