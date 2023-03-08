@@ -46,8 +46,6 @@ from modules.shared import cmd_opts
 import modules.hypernetworks.hypernetwork
 
 
-
-
 if cmd_opts.server_name:
     server_name = cmd_opts.server_name
 else:
