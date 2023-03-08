@@ -45,6 +45,74 @@ from modules import modelloader
 from modules.shared import cmd_opts
 import modules.hypernetworks.hypernetwork
 
+extensions= True
+if extensions: 
+  %cd /content/stable-diffusion-webui/extensions
+  !git clone https://github.com/toledoss/novelai-2-local-prompt
+  !git clone https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
+  !rm -rf sd_civitai_extension
+  !git clone https://github.com/vt-idiot/sd-civitai-browser
+  !git clone https://github.com/alemelis/sd-webui-ar
+  !git clone https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
+  !git clone https://github.com/fkunn1326/openpose-editor.git
+  !git clone https://github.com/Mikubill/sd-webui-controlnet.git
+  !git clone https://github.com/guzuligo/CFG-Schedule-for-Automatic1111-SD.git
+  !git clone https://github.com/hnmr293/posex.git
+  !git clone https://github.com/KohakuBlueleaf/a1111-sd-webui-locon.git
+  !git clone https://github.com/Malisius/booru2prompt.git
+  !git clone https://github.com/butaixianran/Stable-Diffusion-Webui-Civitai-Helper
+    
+lora12= True
+if lora12:
+    cd
+    cd /content/stable-diffusion-webui/models/Lora
+    curl -Lo ghibli_style_offset.safetensors https://civitai.com/api/download/models/7657
+    curl -Lo Iino_Miko.safetensors https://civitai.com/api/download/models/10476
+    curl -Lo megumin.safetensors https://civitai.com/api/download/models/10571 
+    curl -Lo hinata.safetensors https://civitai.com/api/download/models/5480
+    curl -Lo corneo_marin_kitagawa.pt https://civitai.com/api/download/models/6093
+    curl -Lo mt_eric.safetensors https://civitai.com/models/5345/eris-mushoku-tensei
+    curl -Lo amberGenshinImpact_flexibleV1.safetensors https://civitai.com/api/download/models/5105
+    curl -Lo gwenFromLeagueOf_gwenLolV1.safetensors https://civitai.com/models/5025/gwen-from-league-of-legends
+    curl -Lo reze.safetensors https://civitai.com/api/download/models/7660
+    curl -Lo akali_v2-000038.safetensors https://civitai.com/api/download/models/6447
+    curl -Lo nijikaIjichiOfBocchiThe_v10.safetensors https://civitai.com/api/download/models/8889
+    curl -Lo animeScreencapStyle_v230epochs.safetensors https://civitai.com/api/download/models/5742
+    curl -Lo poiSpring-000008.safetensors https://civitai.com/api/download/models/8762
+    curl -Lo breasts_on_glass.safetensors https://civitai.com/api/download/models/8614
+    curl -Lo yoimiya_v10.safetensors https://civitai.com/api/download/models/6969
+    curl -Lo hutao_nai.safetensors https://civitai.com/api/download/models/8813
+    curl -Lo SonozakiShion.safetensors https://civitai.com/api/download/models/9578
+    curl -Lo Cosplay-000008.safetensors https://civitai.com/api/download/models/9509
+    curl -Lo Yotsuba.safetensors https://civitai.com/api/download/models/9589
+    curl -Lo Victorian02.safetensors https://civitai.com/api/download/models/10782
+    curl -Lo KITA-000012.safetensors https://civitai.com/api/download/models/10368
+    curl -Lo sakamata_spring-000002.safetensors https://civitai.com/api/download/models/8974
+    curl -Lo girls_in_glass_jars.safetensors https://civitai.com/api/download/models/12419
+    curl -Lo nakano_nino.safetensors https://civitai.com/api/download/models/11698
+    curl -Lo Caulifla.safetensors https://civitai.com/api/download/models/13293
+    curl -Lo kohaku.safetensors https://civitai.com/api/download/models/14017
+    curl -Lo kugisaki-Nobara-LoRA.safetensors https://civitai.com/api/download/models/13723
+    curl -Lo one_breast_out.safetensors https://civitai.com/api/download/models/13507
+    curl -Lo yuuka.safetensors https://civitai.com/api/download/models/13456
+    curl -Lo shinkai_makoto_offset.safetensors https://civitai.com/api/download/models/12610
+    curl -Lo ganyu.safetensors https://civitai.com/api/download/models/11181
+    curl -Lo hutao_v2.safetensors https://civitai.com/api/download/models/14479
+    curl -Lo nknk.safetensors https://civitai.com/api/download/models/14433
+    curl -Lo syle_nou.safetensors https://civitai.com/api/download/models/14410
+    curl -Lo LycorisRecoil_v10.safetensors https://civitai.com/api/download/models/14696
+    curl -Lo ssssGridmanShinjouAkaneSSSS_shinjouAkane.safetensors https://civitai.com/api/download/models/18013
+    curl -Lo raphtalialora_v1.safetensors https://civitai.com/api/download/models/17963
+    curl -Lo laGalissonniereAzurLaneChina_v108.safetensors https://civitai.com/api/download/models/13847
+    curl -Lo UsamiRenkoTouhou_v10.safetensors https://civitai.com/api/download/models/17962
+    curl -Lo reZeroMinerva_v10.safetensors https://civitai.com/api/download/models/18134
+    curl -Lo arknightsLaPluma_v10.safetensors https://civitai.com/api/download/models/18074
+    curl -Lo bocchiTheRockLocon_v02.safetensors https://civitai.com/api/download/models/18554
+    curl -Lo tdGirlTDAcfun_10.safetensors https://civitai.com/api/download/models/18558
+    curl -Lo ochakoUrarakaMHA_v10.safetensors https://civitai.com/api/download/models/19484
+    curl -Lo suiIsekaiOjisan_suiIsekaiOjisan.safetensors https://civitai.com/api/download/models/19282
+
+
 
 if cmd_opts.server_name:
     server_name = cmd_opts.server_name
